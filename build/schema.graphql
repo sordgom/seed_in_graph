@@ -1,0 +1,19 @@
+type _Schema_
+  @fulltext(
+    name: "tokenSearch"
+    language: en
+    algorithm: rank
+    include: [{ entity: "Token", fields: [{ name: "ownerId" }] }]
+  )
+
+type Token @entity {
+  id: ID!
+  owner: User!
+  ownerId: String!
+  tokenId: String!
+}
+
+type User @entity {
+  id: ID!
+  tokens: [Token!]! @derivedFrom(field: "owner")
+}

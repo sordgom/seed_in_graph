@@ -1,0 +1,17 @@
+{
+  "name": "seedIn",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ sordgom/seed-glory-badge",
+    "create-local": "graph create --node http://localhost:8020/ sordgom/seed-glory-badge",
+    "remove-local": "graph remove --node http://localhost:8020/ sordgom/seed-glory-badge",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 sordgom/seed-glory-badge",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.35.0",
+    "@graphprotocol/graph-ts": "0.28.1"
+  }
+}
